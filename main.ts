@@ -1,14 +1,17 @@
+function ShowStringPerChars (text: string, showms: number, clearms: number) {
+    for (let index = 0; index <= text.length - 1; index++) {
+        basic.showString(text.charAt(index))
+        basic.pause(showms)
+        basic.clearScreen()
+        basic.pause(clearms)
+    }
+}
 input.onButtonPressed(Button.A, function () {
     basic.showNumber(text1.length)
 })
 input.onButtonPressed(Button.B, function () {
-    for (let index = 0; index <= text2.length - 1; index++) {
-        basic.showString(text2.charAt(index))
-        basic.pause(500)
-        basic.clearScreen()
-        basic.pause(200)
-    }
-    basic.showString("X")
+    ShowStringPerChars("abc", 500, 200)
+    ShowStringPerChars(text2, 250, 100)
 })
 let text2 = ""
 let text1 = ""
